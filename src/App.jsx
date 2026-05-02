@@ -125,7 +125,7 @@ export default function App() {
 
             {/* Resume Button */}
             <a
-              href="/public/resume/Rupak_Resume.pdf"
+              href={`${import.meta.env.BASE_URL}resume/Rupak_Resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className={`ml-4 px-4 py-2 rounded-lg font-semibold border transition-all ${
@@ -197,7 +197,7 @@ export default function App() {
 
             {/* Resume Button (Mobile) */}
             <a
-              href="/Rupak_Ganvir_Resume.pdf"
+              href={`${import.meta.env.BASE_URL}resume/Rupak_Resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className={`px-4 py-2 rounded-lg font-semibold border transition-all ${
@@ -397,7 +397,7 @@ export default function App() {
         {/* Buttons */}
         <div className="flex flex-wrap justify-center gap-4">
           <motion.a
-            href="/public/resume/Rupak_Resume.pdf"
+            href={`${import.meta.env.BASE_URL}resume/Rupak_Resume.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
@@ -411,7 +411,7 @@ export default function App() {
             View Resume
           </motion.a>
           <motion.a
-            href="https://linkedin.com/in/rupakganvir"
+            href="https://www.linkedin.com/in/rupak-ganvir-8a46a7213/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
@@ -459,7 +459,7 @@ export default function App() {
               </span>
             </div>
             <p className="text-blue-400 text-sm mb-3">
-              April 2024 – November 2024
+              April 2024 - November 2024
             </p>
             <ul
               className="list-disc list-inside space-y-2"
@@ -503,7 +503,7 @@ export default function App() {
               </span>
             </div>
             <p className="text-blue-400 text-sm mb-3">
-              April 2023 – September 2023
+              April 2023 - September 2023
             </p>
             <ul
               className="list-disc list-inside space-y-2"
@@ -562,7 +562,7 @@ export default function App() {
             <p
               className={`text-sm mb-4 ${dark ? "text-gray-500" : "text-gray-400"}`}
             >
-              2025 – Present
+              2025 - Present
             </p>
             <ul
               className="list-disc list-inside space-y-2"
@@ -604,7 +604,7 @@ export default function App() {
             <p
               className={`text-sm mb-4 ${dark ? "text-gray-500" : "text-gray-400"}`}
             >
-              2019 – 2023
+              2019 - 2023
             </p>
             <ul
               className="list-disc list-inside space-y-2"
@@ -741,31 +741,37 @@ export default function App() {
 
         {/* Project Data */}
         {(() => {
+          // ✏️ TO UPDATE: Add or change GitHub links here
           const projects = [
             {
-              title: "Email Template Optimizer",
-              desc: "Designed optimized email templates to improve deliverability and reduce spam rates.",
-              tech: ["HTML", "CSS", "JS"],
+              title: "Monte Carlo T20 Simulation",
+              desc: "Monte Carlo simulation to estimate T20 cricket run chase probabilities — built while studying probability distributions at IIT Kanpur.",
+              tech: ["Python", "Jupyter Notebook"],
+              link: "https://github.com/RupakGanvir/monte-carlo-t20-simulation",
             },
             {
-              title: "Reddit TTS YouTube Automation",
-              desc: "Automated video creation using Reddit text-to-speech, building a scalable YouTube pipeline.",
-              tech: ["Python", "FFmpeg", "API"],
+              title: "Human Counting System",
+              desc: "Human detection and counting system using OpenCV supporting image, video, and real-time webcam input with improved accuracy using Non-Max Suppression.",
+              tech: ["Jupyter Notebook", "OpenCV"],
+              link: "https://github.com/RupakGanvir/Humans-Counting",
             },
             {
               title: "Portfolio Website (This One!)",
               desc: "Built a fully responsive personal portfolio using React, Tailwind, and Framer Motion.",
               tech: ["React", "Tailwind", "Framer Motion"],
+              link: "https://github.com/RupakGanvir",
             },
             {
               title: "Weather Forecast App",
               desc: "A sleek weather app fetching real-time data using OpenWeather API.",
               tech: ["React", "API"],
+              link: "https://github.com/RupakGanvir",
             },
             {
               title: "Task Manager Dashboard",
               desc: "A full-stack task tracker with authentication and analytics.",
               tech: ["Node.js", "MongoDB", "Express"],
+              link: "https://github.com/RupakGanvir",
             },
           ];
 
@@ -812,7 +818,9 @@ export default function App() {
                       ))}
                     </div>
                     <a
-                      href="#"
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-blue-400 hover:underline font-medium"
                     >
                       View Project →
@@ -950,7 +958,7 @@ export default function App() {
             </a>
 
             <a
-              href="https://linkedin.com/in/rupakganvir"
+              href="https://www.linkedin.com/in/rupak-ganvir-8a46a7213/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-400 transition-transform transform hover:scale-125"
