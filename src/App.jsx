@@ -763,7 +763,7 @@ export default function App() {
             },
             {
               title: "Weather Forecast App",
-              desc: "A sleek weather app fetching real-time data using OpenWeather API.",
+              desc: "A sleek weather app fetching real time data using OpenWeather API.",
               tech: ["React", "API"],
               link: "https://github.com/RupakGanvir",
             },
