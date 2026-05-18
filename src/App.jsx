@@ -386,7 +386,9 @@ export default function App() {
             dark ? "bg-blue-500/10" : "bg-blue-50"
           }`}
         >
-          <p className="text-sm font-semibold text-blue-400 mb-1">Current Status</p>
+          <p className="text-sm font-semibold text-blue-400 mb-1">
+            Current Status
+          </p>
           <p className={`text-sm ${dark ? "text-gray-300" : "text-gray-600"}`}>
             {
               "Pursuing M.Tech. at IIT Kanpur · Building ML & geospatial projects · Open to internships & research collaborations"
