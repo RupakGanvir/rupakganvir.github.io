@@ -1,16 +1,137 @@
-# React + Vite
+# 🚀 Rupak Ganvir - Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive personal portfolio website built to showcase my journey, projects, skills, and experience in Software Engineering, Machine Learning, and Data Science.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Visit the portfolio here:
 
-## React Compiler
+**https://rupakganvir.github.io**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 👨‍💻 About Me
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+I am currently pursuing an **M.Tech. in Geoinformatics at IIT Kanpur** and have a professional background as a **Software Engineer**. My interests lie at the intersection of:
+
+- Machine Learning
+- Data Science
+- Artificial Intelligence
+- Software Development
+- Geospatial Technologies
+
+This portfolio serves as a central place to showcase my projects, technical skills, academic journey, and professional experience.
+
+---
+
+## ✨ Features
+
+- Responsive design for desktop and mobile
+- Dark/Light mode toggle
+- Interactive animated background
+- Smooth scrolling navigation
+- Project showcase with GitHub links
+- Resume download section
+- Contact information and social links
+- Modern UI built with React and Tailwind CSS
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- React.js
+- Vite
+- Tailwind CSS
+- Framer Motion
+
+### Deployment
+
+- GitHub Pages
+
+### Tools
+
+- Git
+- GitHub
+- VS Code
+
+---
+
+## 📂 Sections
+
+- Hero Section
+- About Me
+- Experience
+- Education
+- Skills
+- Projects
+- Contact
+
+---
+
+## 🚀 Featured Projects
+
+Some of the projects highlighted in this portfolio include:
+
+- House Price Prediction
+- Customer Churn Prediction
+- Data Analysis Projects
+- Machine Learning Projects
+- Open Source and Personal Projects
+
+More projects can be found on my GitHub profile.
+
+---
+
+## 📄 Resume
+
+The latest version of my resume is available directly from the portfolio website.
+
+---
+
+## ⚙️ Local Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/rupakganvir/rupakganvir.github.io.git
+```
+
+Navigate to the project:
+
+```bash
+cd rupakganvir.github.io
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run locally:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+---
+
+## 📌 Future Improvements
+
+- More ML and Data Science projects
+- Blog section
+- Project filtering
+- Interactive project demos
+- Enhanced animations and visualizations
+
+---
+
+⭐ If you like the portfolio, feel free to star the repository.
