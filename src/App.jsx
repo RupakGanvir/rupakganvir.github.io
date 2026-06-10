@@ -38,6 +38,10 @@ export default function App() {
   };
 
   useEffect(() => {
+    window.history.scrollRestoration = "manual";
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     // run once to set initial state (in case page opens scrolled)
@@ -70,11 +74,6 @@ export default function App() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Global smooth scroll
-  useEffect(() => {
-    document.documentElement.style.scrollBehavior = "smooth";
   }, []);
 
   return (
@@ -214,9 +213,9 @@ export default function App() {
 
       {/* --- HERO --- */}
       <motion.section
-        className="flex flex-col items-center justify-center text-center min-h-screen px-4 pt-24"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
+        className="flex flex-col items-center justify-center text-center min-h-[100svh] px-4 pt-24"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
         {/* Photo */}
@@ -261,7 +260,9 @@ export default function App() {
             dark ? "text-gray-400" : "text-gray-600"
           }`}
         >
-          Building intelligent systems • Exploring data • Shipping products
+          <b>
+            Building intelligent systems • Exploring data • Shipping products
+          </b>
         </motion.p>
 
         {/* About blurb */}
@@ -280,8 +281,10 @@ export default function App() {
 
         {/* Buttons */}
         <div className="flex flex-wrap justify-center gap-4">
-          <a
+          <motion.a
             href="#projects"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
             className={`px-6 py-3 border rounded-full font-semibold transition-all duration-300 shadow-md ${
               dark
                 ? "border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-black"
@@ -289,24 +292,27 @@ export default function App() {
             }`}
           >
             View My Work
-          </a>
-          <a
+          </motion.a>
+
+          <motion.a
             href="#contact"
-            className={`px-6 py-3 border rounded-full transition-all font-semibold ${
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            className={`px-6 py-3 border rounded-full font-semibold transition-all duration-300 ${
               dark
-                ? "border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white"
-                : "border-gray-400 text-gray-700 hover:bg-gray-200 hover:text-black"
+                ? "border-gray-500 text-gray-300 hover:bg-gray-700 hover:text-white"
+                : "border-gray-400 text-gray-600 hover:bg-gray-200 hover:text-black"
             }`}
           >
             Contact Me
-          </a>
+          </motion.a>
         </div>
       </motion.section>
 
       {/* --- ABOUT SECTION --- */}
       <motion.section
         id="about"
-        className="scroll-mt-24 max-w-4xl mx-auto mt-32 px-6 flex flex-col items-center text-center"
+        className="max-w-4xl mx-auto mt-32 px-6 flex flex-col items-center text-center"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -334,8 +340,8 @@ export default function App() {
               whileHover={{ scale: 1.05 }}
               className={`p-4 rounded-2xl border text-center transition-all ${
                 dark
-                  ? "border-gray-700 bg-black/30 hover:border-blue-500/60"
-                  : "border-gray-200 bg-white/50 hover:border-blue-400/60"
+                  ? "border-gray-700 bg-black/30 hover:border-blue-500"
+                  : "border-gray-200 bg-white/50 hover:border-blue-400"
               }`}
             >
               <div className="text-3xl font-bold text-blue-400 mb-1">
@@ -350,51 +356,58 @@ export default function App() {
           ))}
         </div> */}
 
-        {/* Currently exploring tags */}
+        {/* Focus areas — styled like skill tags to match Skills section */}
         <div className="mb-10 w-full max-w-2xl">
           <p
-            className={`text-sm font-semibold uppercase tracking-widest mb-4 ${dark ? "text-gray-500" : "text-gray-400"}`}
+            className={`text-sm font-semibold uppercase tracking-widest mb-5 ${dark ? "text-gray-400" : "text-gray-500"}`}
           >
-            Currently Exploring
+            <b>Currently Exploring</b>
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              { icon: "🤖", label: "Machine Learning" },
-              { icon: "📊", label: "Data Science" },
-              { icon: "🌍", label: "Geospatial AI" },
-              { icon: "🌐", label: "Full Stack Dev" },
-              { icon: "🧠", label: "Deep Learning" },
-              { icon: "📡", label: "Remote Sensing" },
+              "Machine Learning",
+              "Data Science",
+              "Geospatial AI",
+              "Full Stack Dev",
+              "Deep Learning",
+              "Remote Sensing",
             ].map((tag, i) => (
               <span
                 key={i}
-                className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${
+                className={`px-4 py-2 border rounded-full text-sm font-medium transition-all cursor-default ${
                   dark
-                    ? "border-blue-500/40 text-blue-300 bg-blue-500/10 hover:bg-blue-500/20"
-                    : "border-blue-400/50 text-blue-600 bg-blue-50 hover:bg-blue-100"
+                    ? "border-gray-600 text-gray-300 hover:border-blue-400 hover:text-blue-400 hover:bg-blue-400/10"
+                    : "border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50"
                 }`}
               >
-                {tag.icon} {tag.label}
+                {tag}
               </span>
             ))}
           </div>
         </div>
 
-        {/* Status callout */}
-        <div
-          className={`w-full max-w-2xl mb-10 px-5 py-4 rounded-2xl border-l-4 border-blue-500 text-left ${
-            dark ? "bg-blue-500/10" : "bg-blue-50"
+        {/* Current status card — styled like exp/edu cards */}
+        <motion.div
+          whileHover={{ scale: 1.02 }}
+          className={`w-full max-w-2xl mb-10 p-5 rounded-2xl border transition-all shadow-md backdrop-blur-md ${
+            dark
+              ? "border-gray-700 bg-black/30 hover:border-blue-500 hover:bg-blue-500/10"
+              : "border-gray-200 bg-white/50 hover:border-blue-500 hover:bg-blue-100/30"
           }`}
         >
-          <p className="text-sm font-semibold text-blue-400 mb-1">
+          <p
+            className={`text-xs font-semibold uppercase tracking-widest mb-2 ${dark ? "text-blue-400" : "text-blue-500"}`}
+          >
             Current Status
           </p>
-          <p className={`text-sm ${dark ? "text-gray-300" : "text-gray-600"}`}>
+          <p
+            className={`text-sm leading-relaxed ${dark ? "text-gray-300" : "text-gray-600"}`}
+          >
             {
               "Pursuing M.Tech. at IIT Kanpur · Building ML & geospatial projects · Open to internships & research collaborations"
             }
           </p>
-        </div>
+        </motion.div>
 
         {/* Buttons */}
         <div className="flex flex-wrap justify-center gap-4">
@@ -404,7 +417,7 @@ export default function App() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className={`border px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-md ${
+            className={`px-6 py-3 border rounded-full font-semibold transition-all duration-300 shadow-md ${
               dark
                 ? "border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-black"
                 : "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
@@ -420,8 +433,8 @@ export default function App() {
             whileTap={{ scale: 0.97 }}
             className={`px-6 py-3 border rounded-full font-semibold transition-all duration-300 ${
               dark
-                ? "border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white"
-                : "border-gray-400 text-gray-700 hover:bg-gray-200 hover:text-black"
+                ? "border-gray-500 text-gray-300 hover:bg-gray-700 hover:text-white"
+                : "border-gray-400 text-gray-600 hover:bg-gray-200 hover:text-black"
             }`}
           >
             LinkedIn
@@ -432,7 +445,7 @@ export default function App() {
       {/* --- WORK EXPERIENCE SECTION --- */}
       <motion.section
         id="experience"
-        className="scroll-mt-24 max-w-4xl mx-auto mt-32 px-6"
+        className="max-w-4xl mx-auto mt-32 px-6"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -446,8 +459,8 @@ export default function App() {
             whileHover={{ scale: 1.02 }}
             className={`p-6 rounded-2xl border transition-all shadow-md backdrop-blur-md ${
               dark
-                ? "border-gray-700 bg-black/70 hover:border-blue-500 hover:bg-blue-500/10"
-                : "border-gray-300 bg-white/70 hover:border-blue-500 hover:bg-blue-100/30"
+                ? "border-gray-700 bg-black/30 hover:border-blue-500 hover:bg-blue-500/10"
+                : "border-gray-300 bg-white/50 hover:border-blue-500 hover:bg-blue-100/30"
             }`}
           >
             <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
@@ -464,8 +477,7 @@ export default function App() {
               April 2024 - November 2024
             </p>
             <ul
-              className="list-disc list-inside space-y-2"
-              style={{ color: dark ? "#9ca3af" : "#4b5563" }}
+              className={`list-disc list-inside space-y-2 ${dark ? "text-gray-400" : "text-gray-600"}`}
             >
               <li>
                 {
@@ -490,8 +502,8 @@ export default function App() {
             whileHover={{ scale: 1.02 }}
             className={`p-6 rounded-2xl border transition-all shadow-md backdrop-blur-md ${
               dark
-                ? "border-gray-700 bg-black/70 hover:border-blue-500 hover:bg-blue-500/10"
-                : "border-gray-300 bg-white/70 hover:border-blue-500 hover:bg-blue-100/30"
+                ? "border-gray-700 bg-black/30 hover:border-blue-500 hover:bg-blue-500/10"
+                : "border-gray-300 bg-white/50 hover:border-blue-500 hover:bg-blue-100/30"
             }`}
           >
             <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
@@ -508,8 +520,7 @@ export default function App() {
               April 2023 - September 2023
             </p>
             <ul
-              className="list-disc list-inside space-y-2"
-              style={{ color: dark ? "#9ca3af" : "#4b5563" }}
+              className={`list-disc list-inside space-y-2 ${dark ? "text-gray-400" : "text-gray-600"}`}
             >
               <li>
                 {
@@ -534,7 +545,7 @@ export default function App() {
       {/* --- EDUCATION SECTION --- */}
       <motion.section
         id="education"
-        className="scroll-mt-24 max-w-4xl mx-auto mt-32 px-6"
+        className="max-w-4xl mx-auto mt-32 px-6"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -548,15 +559,17 @@ export default function App() {
             whileHover={{ scale: 1.02 }}
             className={`p-6 rounded-2xl border transition-all shadow-md backdrop-blur-md ${
               dark
-                ? "border-gray-700 bg-black/10 hover:border-blue-500 hover:bg-blue-500/10"
-                : "border-gray-300 bg-white/10 hover:border-blue-500 hover:bg-blue-100/30"
+                ? "border-gray-700 bg-black/30 hover:border-blue-500 hover:bg-blue-500/10"
+                : "border-gray-300 bg-white/50 hover:border-blue-500 hover:bg-blue-100/30"
             }`}
           >
             <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
               <h4 className="text-xl font-bold">
                 {"Indian Institute of Technology (IIT) Kanpur"}
               </h4>
-              <span className="text-xs px-3 py-1 rounded-full border border-blue-500/40 text-blue-400 bg-blue-500/10">
+              <span
+                className={`text-xs px-3 py-1 rounded-full border ${dark ? "border-blue-400 text-blue-400" : "border-blue-500 text-blue-500"}`}
+              >
                 Ongoing
               </span>
             </div>
@@ -567,8 +580,7 @@ export default function App() {
               2025 - Present
             </p>
             <ul
-              className="list-disc list-inside space-y-2"
-              style={{ color: dark ? "#9ca3af" : "#4b5563" }}
+              className={`list-disc list-inside space-y-2 ${dark ? "text-gray-400" : "text-gray-600"}`}
             >
               <li>
                 {
@@ -593,8 +605,8 @@ export default function App() {
             whileHover={{ scale: 1.02 }}
             className={`p-6 rounded-2xl border transition-all shadow-md backdrop-blur-md ${
               dark
-                ? "border-gray-700 bg-black/10 hover:border-blue-500 hover:bg-blue-500/10"
-                : "border-gray-300 bg-white/10 hover:border-blue-500 hover:bg-blue-100/30"
+                ? "border-gray-700 bg-black/30 hover:border-blue-500 hover:bg-blue-500/10"
+                : "border-gray-300 bg-white/50 hover:border-blue-500 hover:bg-blue-100/30"
             }`}
           >
             <h4 className="text-xl font-bold mb-1">
@@ -609,8 +621,7 @@ export default function App() {
               2019 - 2023
             </p>
             <ul
-              className="list-disc list-inside space-y-2"
-              style={{ color: dark ? "#9ca3af" : "#4b5563" }}
+              className={`list-disc list-inside space-y-2 ${dark ? "text-gray-400" : "text-gray-600"}`}
             >
               <li>
                 {
@@ -635,7 +646,7 @@ export default function App() {
       {/* --- SKILLS SECTION --- */}
       <motion.section
         id="skills"
-        className="scroll-mt-24 max-w-5xl mx-auto mt-32 px-6"
+        className="max-w-5xl mx-auto mt-32 px-6"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -699,11 +710,11 @@ export default function App() {
           ].map((group, gi) => (
             <motion.div
               key={gi}
-              whileHover={{ scale: 1.01 }}
+              whileHover={{ scale: 1.02 }}
               className={`p-6 rounded-2xl border transition-all shadow-md backdrop-blur-md ${
                 dark
-                  ? "border-gray-700 bg-black/30 hover:border-blue-500/60"
-                  : "border-gray-200 bg-white/50 hover:border-blue-400/60"
+                  ? "border-gray-700 bg-black/30 hover:border-blue-500"
+                  : "border-gray-200 bg-white/50 hover:border-blue-400"
               }`}
             >
               <h4
@@ -733,13 +744,13 @@ export default function App() {
       {/* --- PROJECTS SECTION --- */}
       <motion.section
         id="projects"
-        className="scroll-mt-24 max-w-6xl mx-auto mt-32 px-6"
+        className="max-w-6xl mx-auto mt-32 px-6"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <h3 className="text-3xl font-semibold mb-12 text-center">Projects</h3>
+        <h3 className="text-3xl font-semibold mb-10 text-center">Projects</h3>
 
         {/* Project Data */}
         {(() => {
@@ -790,12 +801,12 @@ export default function App() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.15, duration: 0.8 }}
                     viewport={{ once: true }}
-                    className={`p-6 rounded-2xl border transition-all shadow-md ${
+                    className={`p-6 rounded-2xl border transition-all shadow-md backdrop-blur-md ${
                       dark
-                        ? "border-gray-700 bg-black/40 hover:border-blue-500 hover:bg-blue-500/10"
-                        : "border-gray-300 bg-white hover:border-blue-500 hover:bg-blue-100/30"
-                    } hover:shadow-blue-500/10`}
-                    whileHover={{ scale: 1.03 }}
+                        ? "border-gray-700 bg-black/30 hover:border-blue-500 hover:bg-blue-500/10"
+                        : "border-gray-300 bg-white/50 hover:border-blue-500 hover:bg-blue-100/30"
+                    }`}
+                    whileHover={{ scale: 1.02 }}
                   >
                     <h4 className="text-xl font-bold mb-3">{project.title}</h4>
                     <p
@@ -833,8 +844,10 @@ export default function App() {
 
               {/* Show More / Less + GitHub buttons */}
               <div className="flex flex-wrap justify-center gap-4 mt-10">
-                <button
+                <motion.button
                   onClick={() => setShowAll(!showAll)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
                   className={`px-6 py-3 border rounded-full font-semibold transition-all duration-300 shadow-md ${
                     dark
                       ? "border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-black"
@@ -842,7 +855,7 @@ export default function App() {
                   }`}
                 >
                   {showAll ? "Show Less" : "Show More Projects"}
-                </button>
+                </motion.button>
                 {showAll && (
                   <motion.a
                     href="https://github.com/rupakganvir"
@@ -850,11 +863,13 @@ export default function App() {
                     rel="noopener noreferrer"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.97 }}
                     transition={{ duration: 0.3 }}
                     className={`px-6 py-3 border rounded-full font-semibold transition-all duration-300 ${
                       dark
-                        ? "border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white"
-                        : "border-gray-400 text-gray-700 hover:bg-gray-200 hover:text-black"
+                        ? "border-gray-500 text-gray-300 hover:bg-gray-700 hover:text-white"
+                        : "border-gray-400 text-gray-600 hover:bg-gray-200 hover:text-black"
                     }`}
                   >
                     View GitHub
@@ -869,7 +884,7 @@ export default function App() {
       {/* --- CONTACT SECTION --- */}
       <motion.section
         id="contact"
-        className="scroll-mt-24 max-w-4xl mx-auto mt-32 mb-20 px-6 text-center"
+        className="max-w-4xl mx-auto mt-32 mb-20 px-6 text-center"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -892,25 +907,29 @@ export default function App() {
             name="Name"
             placeholder="Your Name"
             required
-            className="px-4 py-3 rounded-lg border bg-transparent focus:outline-none focus:border-blue-500"
+            className={`px-4 py-3 rounded-lg border bg-transparent focus:outline-none focus:border-blue-500 ${dark ? "border-gray-600 text-white placeholder-gray-500" : "border-gray-300 text-gray-800 placeholder-gray-400"}`}
           />
           <input
             type="email"
             name="Email"
             placeholder="Your Email"
             required
-            className="px-4 py-3 rounded-lg border bg-transparent focus:outline-none focus:border-blue-500"
+            className={`px-4 py-3 rounded-lg border bg-transparent focus:outline-none focus:border-blue-500 ${dark ? "border-gray-600 text-white placeholder-gray-500" : "border-gray-300 text-gray-800 placeholder-gray-400"}`}
           />
           <textarea
             name="Message"
             placeholder="Your Message"
             rows="5"
             required
-            className="px-4 py-3 rounded-lg border bg-transparent focus:outline-none focus:border-blue-500"
+            className={`px-4 py-3 rounded-lg border bg-transparent focus:outline-none focus:border-blue-500 ${dark ? "border-gray-600 text-white placeholder-gray-500" : "border-gray-300 text-gray-800 placeholder-gray-400"}`}
           />
           <button
             type="submit"
-            className="mt-4 px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-all"
+            className={`mt-2 px-6 py-3 border rounded-full font-semibold transition-all duration-300 shadow-md ${
+              dark
+                ? "border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-black"
+                : "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+            }`}
           >
             Send Message
           </button>

@@ -1,11 +1,11 @@
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
-section {
+/* section {
     scroll-margin-top: 100px;
-    /* adjust if navbar height changes */
-}
+} */
 
 
 @tailwind base;
