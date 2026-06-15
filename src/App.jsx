@@ -757,16 +757,16 @@ export default function App() {
           // ✏️ TO UPDATE: Add or change GitHub links here
           const projects = [
             {
+              title: "Fraud Detection System",
+              desc: "Built a fraud detection pipeline on the IEEE-CIS dataset (590K+ transactions), implementing Logistic Regression from scratch in NumPy and improving AUC-ROC from 0.784 to 0.904 using XGBoost.",
+              tech: ["Python", "XGBoost", "SMOTE", "Scikit-learn"],
+              link: "https://github.com/RupakGanvir/fraud-detection-system",
+            },
+            {
               title: "Monte Carlo T20 Simulation",
               desc: "Monte Carlo simulation to estimate T20 cricket run chase probabilities — built while studying probability distributions at IIT Kanpur.",
               tech: ["Python", "Jupyter Notebook"],
               link: "https://github.com/RupakGanvir/monte-carlo-t20-simulation",
-            },
-            {
-              title: "Human Counting System",
-              desc: "Human detection and counting system using OpenCV supporting image, video, and real-time webcam input with improved accuracy using Non-Max Suppression.",
-              tech: ["Jupyter Notebook", "OpenCV"],
-              link: "https://github.com/RupakGanvir/Humans-Counting",
             },
             {
               title: "Portfolio Website (This One!)",
@@ -775,10 +775,10 @@ export default function App() {
               link: "https://github.com/RupakGanvir",
             },
             {
-              title: "Weather Forecast App",
-              desc: "A sleek weather app fetching real time data using OpenWeather API.",
-              tech: ["React", "API"],
-              link: "https://github.com/RupakGanvir",
+              title: "Human Counting System",
+              desc: "Human detection and counting system using OpenCV supporting image, video, and real-time webcam input with improved accuracy using Non-Max Suppression.",
+              tech: ["Jupyter Notebook", "OpenCV"],
+              link: "https://github.com/RupakGanvir/Humans-Counting",
             },
             {
               title: "Task Manager Dashboard",
