@@ -58,6 +58,7 @@ export default function App() {
         "education",
         "skills",
         "projects",
+        "thesis",
         "contact",
       ];
       const scrollPos = window.scrollY + 150;
@@ -105,6 +106,7 @@ export default function App() {
               "education",
               "skills",
               "projects",
+              "thesis",
               "contact",
             ].map((section) => (
               <a
@@ -176,6 +178,7 @@ export default function App() {
               "education",
               "skills",
               "projects",
+              "thesis",
               "contact",
             ].map((section) => (
               <a
@@ -260,9 +263,7 @@ export default function App() {
             dark ? "text-gray-400" : "text-gray-600"
           }`}
         >
-          <b>
-            Building ML systems • Geospatial AI • Shipping real products
-          </b>
+          <b>Building ML systems • Geospatial AI • Shipping real products</b>
         </motion.p>
 
         {/* About blurb */}
@@ -275,7 +276,7 @@ export default function App() {
           }`}
         >
           {
-            "M.Tech. Geoinformatics student at IIT Kanpur with a background in software engineering. I build end-to-end ML systems, geospatial pipelines, and data products — bridging the gap between research and production."
+            "M.Tech. Geoinformatics student at IIT Kanpur with a background in software engineering. I build end-to-end ML systems, geospatial pipelines, and full-stack data products — bridging the gap between research and production."
           }
         </motion.p>
 
@@ -324,7 +325,7 @@ export default function App() {
           className={`leading-relaxed mb-10 max-w-2xl ${dark ? "text-gray-400" : "text-gray-600"}`}
         >
           {
-            "I'm a software engineer turned ML practitioner — currently pursuing M.Tech. in Geoinformatics at IIT Kanpur under Prof. Onkar Dikshit. I started my career building production web applications and shipping real products at companies like ASP OL Media and DevKalp Technologies. Now I'm channeling that same builder's instinct into ML systems, data pipelines, and geospatial AI. I care about work that sits at the intersection of rigorous engineering and meaningful insight — whether that's a production-grade RAG service, an anomaly detection platform, or a model that says something real about the world."
+            "I'm a software engineer turned ML practitioner — currently pursuing M.Tech. in Geoinformatics at IIT Kanpur under Prof. Onkar Dikshit. I started my career building production web applications at ASP OL Media and DevKalp Technologies, and now I channel that same builder's instinct into ML systems, data pipelines, and geospatial AI. I care about work that sits at the intersection of rigorous engineering and meaningful insight — whether that's a production-grade RAG service, a geodetic adjustment tool, or a model that says something real about the world."
           }
         </p>
 
@@ -662,7 +663,7 @@ export default function App() {
           {[
             {
               category: "Machine Learning & Data Science",
-              emoji: "🤖",
+              emoji: "",
               skills: [
                 "Python",
                 "NumPy",
@@ -670,15 +671,17 @@ export default function App() {
                 "Scikit-learn",
                 "XGBoost",
                 "TensorFlow",
+                "PyTorch",
                 "SMOTE",
                 "Isolation Forest",
-                "FinBERT",
                 "LSTM",
+                "CNN",
+                "FinBERT",
               ],
             },
             {
               category: "RAG & LLM Systems",
-              emoji: "🧠",
+              emoji: "",
               skills: [
                 "FastAPI",
                 "ChromaDB",
@@ -692,25 +695,26 @@ export default function App() {
             },
             {
               category: "Analytics & BI",
-              emoji: "📊",
+              emoji: "",
               skills: [
                 "SQL",
                 "DuckDB",
                 "Streamlit",
                 "Plotly",
-                "Tableau",
-                "Pandas",
                 "Statistical Testing",
+                "Cohort Analysis",
+                "Power Analysis",
+                "CUPED",
               ],
             },
             {
               category: "Programming Languages",
-              emoji: "💻",
+              emoji: "",
               skills: ["Python", "C++", "JavaScript", "TypeScript", "SQL"],
             },
             {
               category: "Full Stack & UI",
-              emoji: "🎨",
+              emoji: "",
               skills: [
                 "React",
                 "Vite",
@@ -726,7 +730,7 @@ export default function App() {
             },
             {
               category: "Geospatial & Remote Sensing",
-              emoji: "🌍",
+              emoji: "",
               skills: [
                 "GIS",
                 "InSAR",
@@ -736,12 +740,23 @@ export default function App() {
                 "QGIS",
                 "SAR",
                 "Mogi Source Modelling",
+                "Kalman Filter",
+                "Geodetic Adjustment",
               ],
             },
             {
               category: "Tools & DevOps",
-              emoji: "⚙️",
-              skills: ["Git", "GitHub Actions", "Docker", "Linux", "AWS", "Render", "Vercel", "Pytest"],
+              emoji: "",
+              skills: [
+                "Git",
+                "GitHub Actions",
+                "Docker",
+                "Linux",
+                "AWS",
+                "Render",
+                "Vercel",
+                "Pytest",
+              ],
             },
           ].map((group, gi) => (
             <motion.div
@@ -793,34 +808,103 @@ export default function App() {
           // ✏️ TO UPDATE: Add or change GitHub links / descriptions here
           const projects = [
             {
-              title: "DocuMind — RAG Service",
-              desc: "Production-grade document Q&A API: hybrid dense+BM25 retrieval fused via Reciprocal Rank Fusion, cross-encoder reranker, 5-metric eval harness (context precision, faithfulness, ROUGE-L), 82-test CI suite, and a two-stage Docker build baking HuggingFace weights at image build time.",
-              tech: ["FastAPI", "ChromaDB", "BM25", "HuggingFace", "Docker", "GitHub Actions", "Python"],
+              title: "DocuMind — Production RAG Service",
+              desc: "Production-grade document Q&A API with hybrid dense+BM25 retrieval fused via Reciprocal Rank Fusion, cross-encoder reranker, a 5-metric evaluation harness (context precision, faithfulness, ROUGE-L), 82-test CI suite, and a two-stage Docker build baking HuggingFace weights at image build time.",
+              tech: [
+                "FastAPI",
+                "ChromaDB",
+                "BM25",
+                "HuggingFace",
+                "Docker",
+                "GitHub Actions",
+                "Python",
+              ],
               link: "https://github.com/RupakGanvir/DocuMind", // ✏️ Update if URL changes
             },
             {
               title: "TerraWatch — Geospatial Anomaly Platform",
-              desc: "Full-stack geospatial anomaly detection platform: React/Leaflet frontend, FastAPI + PostgreSQL/PostGIS backend, JWT auth, and Isolation Forest ML for detecting spatial anomalies. Deployed across Vercel, Render, and Neon (free tier).",
-              tech: ["React", "Leaflet", "FastAPI", "PostGIS", "Isolation Forest", "JWT", "Vercel"],
+              desc: "Full-stack geospatial anomaly detection platform: React/Leaflet interactive map frontend, FastAPI + PostgreSQL/PostGIS backend, JWT authentication, and Isolation Forest ML for detecting spatial anomalies. Deployed across Vercel, Render, and Neon (free tier).",
+              tech: [
+                "React",
+                "Leaflet",
+                "FastAPI",
+                "PostGIS",
+                "Isolation Forest",
+                "JWT",
+                "Vercel",
+              ],
               link: "https://github.com/RupakGanvir", // ✏️ Replace with actual repo link
             },
             {
               title: "RetailPulse — Analytics Pipeline",
-              desc: "End-to-end e-commerce analytics pipeline: raw data ingestion, a documented SQL cleaning layer, DuckDB warehouse with cohort retention marts (CTEs + window functions), a pytest data-quality suite, and a Streamlit + Plotly dashboard with Welch's t-test significance testing on channel LTV.",
-              tech: ["DuckDB", "SQL", "Streamlit", "Plotly", "Pytest", "Python"],
+              desc: "End-to-end e-commerce analytics pipeline: raw data ingestion, documented SQL cleaning layer, DuckDB warehouse with cohort retention marts using CTEs and window functions, a pytest data-quality suite, and a Streamlit + Plotly dashboard with Welch's t-test significance testing on channel LTV.",
+              tech: [
+                "DuckDB",
+                "SQL",
+                "Streamlit",
+                "Plotly",
+                "Pytest",
+                "Python",
+              ],
               link: "https://github.com/RupakGanvir/retail-analytics-pipeline",
+            },
+            {
+              title: "CausalLens — A/B Testing Framework",
+              desc: "Experiment design and analysis framework: statistical power analysis, CUPED variance reduction, sample ratio mismatch (SRM) diagnostics, Benjamini-Hochberg corrected segment analysis, and 12 unit tests. Built to bring causal inference rigour to A/B test workflows.",
+              tech: ["Python", "Scipy", "Pandas", "Pytest", "Statistics"],
+              link: "https://github.com/RupakGanvir/CausalLens",
             },
             {
               title: "Fraud Detection System",
               desc: "ML pipeline on the IEEE-CIS dataset (590K+ transactions). Implemented Logistic Regression from scratch in NumPy, applied SMOTE for class imbalance, and pushed AUC-ROC from 0.784 to 0.904 with XGBoost. Includes a FastAPI serving layer and a Folium geospatial fraud heatmap.",
-              tech: ["Python", "XGBoost", "SMOTE", "FastAPI", "Folium", "Scikit-learn"],
+              tech: [
+                "Python",
+                "XGBoost",
+                "SMOTE",
+                "FastAPI",
+                "Folium",
+                "Scikit-learn",
+              ],
               link: "https://github.com/RupakGanvir/fraud-detection-system", // ✏️ Update if URL changes
             },
             {
               title: "Intraday Trading System",
-              desc: "Autonomous intraday trading system built from scratch — ensemble of XGBoost, LSTM, CNN, and FinBERT sentiment. Live data via Zerodha Kite and Binance WebSocket feeds, paper trading mode, and a React dashboard for monitoring signals in real time.",
-              tech: ["Python", "XGBoost", "LSTM", "CNN", "FinBERT", "React", "Zerodha Kite API"],
+              desc: "Autonomous intraday trading system built from scratch — ensemble of XGBoost, LSTM, CNN, and FinBERT sentiment analysis. Live market data via Zerodha Kite and Binance WebSocket feeds, paper trading mode, and a React dashboard for monitoring signals in real time.",
+              tech: [
+                "Python",
+                "XGBoost",
+                "LSTM",
+                "CNN",
+                "FinBERT",
+                "React",
+                "Zerodha Kite API",
+              ],
               link: "https://github.com/RupakGanvir", // ✏️ Replace with actual repo link
+            },
+            {
+              title: "InSAR Anomaly Detection — Joshimath",
+              desc: "LSTM autoencoder in PyTorch to detect surface deformation anomalies from Sentinel-1 SAR data using the LiCSAR/LiCSBAS pipeline. Applied to the Joshimath land subsidence events in Uttarakhand — a real geospatial hazard monitoring use case.",
+              tech: [
+                "Python",
+                "PyTorch",
+                "LSTM Autoencoder",
+                "Sentinel-1",
+                "LiCSBAS",
+                "Google Colab",
+              ],
+              link: "https://github.com/RupakGanvir", // ✏️ Replace with actual repo link
+            },
+            {
+              title: "Monte Carlo T20 Simulation",
+              desc: "Monte Carlo simulation to estimate T20 cricket run chase probabilities across match scenarios. Built while studying probability distributions at IIT Kanpur — grounded in real statistical theory.",
+              tech: ["Python", "NumPy", "Matplotlib", "Jupyter Notebook"],
+              link: "https://github.com/RupakGanvir/monte-carlo-t20-simulation",
+            },
+            {
+              title: "Human Counting System",
+              desc: "Human detection and counting system using OpenCV's HOG descriptor, supporting image, video, and real-time webcam input. Accuracy improved using Non-Maximum Suppression to eliminate duplicate bounding boxes.",
+              tech: ["Python", "OpenCV", "HOG Descriptor", "Jupyter Notebook"],
+              link: "https://github.com/RupakGanvir/Humans-Counting",
             },
           ];
 
@@ -915,6 +999,309 @@ export default function App() {
             </>
           );
         })()}
+      </motion.section>
+
+      {/* --- THESIS SECTION --- */}
+      <motion.section
+        id="thesis"
+        className="max-w-4xl mx-auto mt-32 px-6"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <h3 className="text-3xl font-semibold mb-3 text-center">
+          M.Tech Thesis
+        </h3>
+        <p
+          className={`text-center text-sm mb-10 ${dark ? "text-gray-500" : "text-gray-400"}`}
+        >
+          IIT Kanpur · Geoinformatics · Supervisor: Prof. Onkar Dikshit
+        </p>
+
+        {/* Title card */}
+        <motion.div
+          whileHover={{ scale: 1.01 }}
+          className={`p-6 rounded-2xl border mb-8 shadow-md backdrop-blur-md ${
+            dark
+              ? "border-blue-500/40 bg-blue-500/5 hover:border-blue-400"
+              : "border-blue-400/40 bg-blue-50/50 hover:border-blue-500"
+          }`}
+        >
+          <p
+            className={`text-xs font-semibold uppercase tracking-widest mb-2 ${dark ? "text-blue-400" : "text-blue-500"}`}
+          >
+            Thesis Title
+          </p>
+          <h4 className="text-xl font-bold mb-2">
+            Sequential Adjustment and Kalman Filter Integration in GeoNet Adjust
+          </h4>
+          <p className={`text-sm ${dark ? "text-gray-400" : "text-gray-600"}`}>
+            Extending an existing geodetic network adjustment software (GeoNet
+            Adjust) with sequential least-squares adjustment, a Kalman filter
+            engine, and a Kalman-LSTM hybrid for GNSS state estimation — applied
+            to India's national GNSS CORS network.
+          </p>
+        </motion.div>
+
+        <div className="space-y-6">
+          {/* Background */}
+          <motion.div
+            whileHover={{ scale: 1.01 }}
+            className={`p-6 rounded-2xl border transition-all shadow-md backdrop-blur-md ${
+              dark
+                ? "border-gray-700 bg-black/30 hover:border-blue-500 hover:bg-blue-500/10"
+                : "border-gray-300 bg-white/50 hover:border-blue-500 hover:bg-blue-100/30"
+            }`}
+          >
+            <h4
+              className={`text-lg font-bold mb-3 flex items-center gap-2 ${dark ? "text-white" : "text-gray-800"}`}
+            >
+              Background & Starting Point
+            </h4>
+            <p
+              className={`text-sm leading-relaxed ${dark ? "text-gray-400" : "text-gray-600"}`}
+            >
+              GeoNet Adjust was originally developed by Himanshu Shekhar
+              (M.Tech, IIT Kanpur) under the same supervisor and submitted in
+              May 2026. The thesis extends that existing codebase rather than
+              starting from scratch — adding new computational capabilities on
+              top of an established geodetic adjustment foundation.
+            </p>
+          </motion.div>
+
+          {/* Core Technical Work */}
+          <motion.div
+            whileHover={{ scale: 1.01 }}
+            className={`p-6 rounded-2xl border transition-all shadow-md backdrop-blur-md ${
+              dark
+                ? "border-gray-700 bg-black/30 hover:border-blue-500 hover:bg-blue-500/10"
+                : "border-gray-300 bg-white/50 hover:border-blue-500 hover:bg-blue-100/30"
+            }`}
+          >
+            <h4
+              className={`text-lg font-bold mb-4 flex items-center gap-2 ${dark ? "text-white" : "text-gray-800"}`}
+            >
+              Core Technical Contributions
+            </h4>
+            <ul
+              className={`space-y-3 text-sm leading-relaxed ${dark ? "text-gray-400" : "text-gray-600"}`}
+            >
+              <li className="flex gap-3">
+                <span className="text-blue-400 mt-0.5 shrink-0">▸</span>
+                <span>
+                  <span
+                    className={`font-semibold ${dark ? "text-gray-200" : "text-gray-800"}`}
+                  >
+                    Sequential Least-Squares Adjustment:
+                  </span>{" "}
+                  Implementing the recursive form of geodetic network
+                  adjustment, enabling the software to process GNSS observations
+                  incrementally rather than in a single batch — critical for
+                  real-time and time-series geodetic applications.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-blue-400 mt-0.5 shrink-0">▸</span>
+                <span>
+                  <span
+                    className={`font-semibold ${dark ? "text-gray-200" : "text-gray-800"}`}
+                  >
+                    Kalman Filter Engine:
+                  </span>{" "}
+                  Building a full Kalman filter module within GeoNet Adjust for
+                  dynamic GNSS state estimation — predicting and correcting
+                  position and velocity states as new measurements arrive,
+                  handling process and measurement noise covariance.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-blue-400 mt-0.5 shrink-0">▸</span>
+                <span>
+                  <span
+                    className={`font-semibold ${dark ? "text-gray-200" : "text-gray-800"}`}
+                  >
+                    Kalman-LSTM Hybrid:
+                  </span>{" "}
+                  A proactively proposed ML extension — coupling the Kalman
+                  filter with an LSTM network (inspired by the KalmanNet
+                  architecture) to learn the process noise covariance from data
+                  rather than hand-tuning it, improving state estimation
+                  accuracy in non-stationary GNSS signal environments.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-blue-400 mt-0.5 shrink-0">▸</span>
+                <span>
+                  <span
+                    className={`font-semibold ${dark ? "text-gray-200" : "text-gray-800"}`}
+                  >
+                    Parallel Processing:
+                  </span>{" "}
+                  Adding multi-core parallel computation support to handle the
+                  scale of India's full national GNSS CORS network — a
+                  significant step up from the smaller UP CORS network used in
+                  prior testing.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-blue-400 mt-0.5 shrink-0">▸</span>
+                <span>
+                  <span
+                    className={`font-semibold ${dark ? "text-gray-200" : "text-gray-800"}`}
+                  >
+                    SINEX Format Support:
+                  </span>{" "}
+                  Full SINEX (Solution INdependent EXchange) format I/O for both
+                  input and output — the standard interchange format for GNSS
+                  solution sharing across geodetic agencies worldwide —
+                  alongside PDF report and time-series output.
+                </span>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Dataset & Scale */}
+          <motion.div
+            whileHover={{ scale: 1.01 }}
+            className={`p-6 rounded-2xl border transition-all shadow-md backdrop-blur-md ${
+              dark
+                ? "border-gray-700 bg-black/30 hover:border-blue-500 hover:bg-blue-500/10"
+                : "border-gray-300 bg-white/50 hover:border-blue-500 hover:bg-blue-100/30"
+            }`}
+          >
+            <h4
+              className={`text-lg font-bold mb-4 flex items-center gap-2 ${dark ? "text-white" : "text-gray-800"}`}
+            >
+              Dataset & Scale
+            </h4>
+            <p
+              className={`text-sm leading-relaxed ${dark ? "text-gray-400" : "text-gray-600"}`}
+            >
+              The expanded thesis scope covers{" "}
+              <span
+                className={`font-semibold ${dark ? "text-gray-200" : "text-gray-800"}`}
+              >
+                India's full national GNSS CORS (Continuously Operating
+                Reference Stations) network
+              </span>{" "}
+              — a substantial scale-up from the smaller Uttar Pradesh CORS
+              network used in earlier validation. This scale tests the parallel
+              processing implementation in a real national geodetic
+              infrastructure context.
+            </p>
+          </motion.div>
+
+          {/* Key References */}
+          <motion.div
+            whileHover={{ scale: 1.01 }}
+            className={`p-6 rounded-2xl border transition-all shadow-md backdrop-blur-md ${
+              dark
+                ? "border-gray-700 bg-black/30 hover:border-blue-500 hover:bg-blue-500/10"
+                : "border-gray-300 bg-white/50 hover:border-blue-500 hover:bg-blue-100/30"
+            }`}
+          >
+            <h4
+              className={`text-lg font-bold mb-4 flex items-center gap-2 ${dark ? "text-white" : "text-gray-800"}`}
+            >
+              Key References
+            </h4>
+            <ul
+              className={`space-y-3 text-sm ${dark ? "text-gray-400" : "text-gray-600"}`}
+            >
+              <li className="flex gap-3">
+                <span className="text-blue-400 mt-0.5 shrink-0">▸</span>
+                <span>
+                  <span
+                    className={`font-semibold ${dark ? "text-gray-200" : "text-gray-800"}`}
+                  >
+                    Verma et al. (Remote Sensing, April 2025)
+                  </span>{" "}
+                  — Hybrid DNN + Extended Kalman Filter for GNSS state
+                  estimation. Primary reference for the Kalman-LSTM hybrid
+                  component.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-blue-400 mt-0.5 shrink-0">▸</span>
+                <span>
+                  <span
+                    className={`font-semibold ${dark ? "text-gray-200" : "text-gray-800"}`}
+                  >
+                    Revach et al. — KalmanNet (IEEE TSP, 2022)
+                  </span>{" "}
+                  — Model-based deep learning for state estimation; closest
+                  architectural match to the Kalman-LSTM hybrid approach.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-blue-400 mt-0.5 shrink-0">▸</span>
+                <span>
+                  <span
+                    className={`font-semibold ${dark ? "text-gray-200" : "text-gray-800"}`}
+                  >
+                    Fraser, Leahy & Collier (Survey Review, 2023)
+                  </span>{" "}
+                  — Automatic segmentation and parallel phased least squares.
+                  Core reference for the parallel processing implementation.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-blue-400 mt-0.5 shrink-0">▸</span>
+                <span>
+                  <span
+                    className={`font-semibold ${dark ? "text-gray-200" : "text-gray-800"}`}
+                  >
+                    Mateo & Mackern
+                  </span>{" "}
+                  — Regional terrestrial reference frame densification and
+                  adjustment methodology.
+                </span>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Tech stack */}
+          <motion.div
+            whileHover={{ scale: 1.01 }}
+            className={`p-6 rounded-2xl border transition-all shadow-md backdrop-blur-md ${
+              dark
+                ? "border-gray-700 bg-black/30 hover:border-blue-500"
+                : "border-gray-200 bg-white/50 hover:border-blue-400"
+            }`}
+          >
+            <h4
+              className={`text-lg font-bold mb-4 flex items-center gap-2 ${dark ? "text-white" : "text-gray-800"}`}
+            >
+              Tools & Technologies
+            </h4>
+            <div className="flex flex-wrap gap-3">
+              {[
+                "Python",
+                "NumPy",
+                "PyTorch",
+                "Kalman Filter",
+                "LSTM",
+                "SINEX Format",
+                "GNSS CORS",
+                "Parallel Processing",
+                "Geodetic Adjustment",
+                "Least Squares",
+              ].map((skill, si) => (
+                <span
+                  key={si}
+                  className={`px-4 py-2 border rounded-full text-sm font-medium transition-all cursor-default ${
+                    dark
+                      ? "border-gray-600 text-gray-300 hover:border-blue-400 hover:text-blue-400 hover:bg-blue-400/10"
+                      : "border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50"
+                  }`}
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </motion.section>
 
       {/* --- CONTACT SECTION --- */}
