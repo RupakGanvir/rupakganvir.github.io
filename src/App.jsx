@@ -237,10 +237,10 @@ export default function App() {
             <span className="text-blue-500">
               <Typewriter
                 words={[
-                  "Software Engineer",
-                  "ML & DS Enthusiast",
+                  "ML & Data Science Engineer",
                   "Full Stack Developer",
-                  "Problem Solver",
+                  "Geospatial AI Researcher",
+                  "IIT Kanpur M.Tech Student",
                 ]}
                 loop={true}
                 typeSpeed={80}
@@ -261,7 +261,7 @@ export default function App() {
           }`}
         >
           <b>
-            Building intelligent systems • Exploring data • Shipping products
+            Building ML systems • Geospatial AI • Shipping real products
           </b>
         </motion.p>
 
@@ -275,7 +275,7 @@ export default function App() {
           }`}
         >
           {
-            "I'm a software engineer turned data enthusiast — currently pursuing M.Tech. in Geoinformatics at IIT Kanpur, where I'm learning to see the world through the lens of spatial data and machine learning. I started my journey building responsive web applications and shipping real products, and now I'm channeling that same builder's instinct toward ML and Data Science."
+            "M.Tech. Geoinformatics student at IIT Kanpur with a background in software engineering. I build end-to-end ML systems, geospatial pipelines, and data products — bridging the gap between research and production."
           }
         </motion.p>
 
@@ -324,7 +324,7 @@ export default function App() {
           className={`leading-relaxed mb-10 max-w-2xl ${dark ? "text-gray-400" : "text-gray-600"}`}
         >
           {
-            "I'm a software engineer turned data enthusiast — currently pursuing M.Tech. in Geoinformatics at IIT Kanpur, where I'm learning to see the world through the lens of spatial data and machine learning. I started my journey building responsive web applications and shipping real products, and now I'm channeling that same builder's instinct toward ML and Data Science. I care deeply about work that sits at the intersection of elegant engineering and meaningful insight — whether that's a clean UI or a model that actually explains something about the world."
+            "I'm a software engineer turned ML practitioner — currently pursuing M.Tech. in Geoinformatics at IIT Kanpur under Prof. Onkar Dikshit. I started my career building production web applications and shipping real products at companies like ASP OL Media and DevKalp Technologies. Now I'm channeling that same builder's instinct into ML systems, data pipelines, and geospatial AI. I care about work that sits at the intersection of rigorous engineering and meaningful insight — whether that's a production-grade RAG service, an anomaly detection platform, or a model that says something real about the world."
           }
         </p>
 
@@ -368,9 +368,11 @@ export default function App() {
               "Machine Learning",
               "Data Science",
               "Geospatial AI",
-              "Full Stack Dev",
+              "RAG & LLM Systems",
               "Deep Learning",
               "Remote Sensing",
+              "InSAR & GNSS",
+              "Analytics Engineering",
             ].map((tag, i) => (
               <span
                 key={i}
@@ -404,7 +406,7 @@ export default function App() {
             className={`text-sm leading-relaxed ${dark ? "text-gray-300" : "text-gray-600"}`}
           >
             {
-              "Pursuing M.Tech. at IIT Kanpur · Building ML & geospatial projects · Open to internships & research collaborations"
+              "M.Tech. Geoinformatics @ IIT Kanpur (Civil Engg. Dept.) · Thesis under Prof. Onkar Dikshit · Building ML, geospatial & data products · Open to internships & research collaborations"
             }
           </p>
         </motion.div>
@@ -666,46 +668,80 @@ export default function App() {
                 "NumPy",
                 "Pandas",
                 "Scikit-learn",
+                "XGBoost",
                 "TensorFlow",
-                "Data Analysis",
+                "SMOTE",
+                "Isolation Forest",
+                "FinBERT",
+                "LSTM",
+              ],
+            },
+            {
+              category: "RAG & LLM Systems",
+              emoji: "🧠",
+              skills: [
+                "FastAPI",
+                "ChromaDB",
+                "BM25",
+                "Reciprocal Rank Fusion",
+                "HuggingFace",
+                "OpenAI API",
+                "Pydantic",
+                "Docker",
+              ],
+            },
+            {
+              category: "Analytics & BI",
+              emoji: "📊",
+              skills: [
+                "SQL",
+                "DuckDB",
+                "Streamlit",
+                "Plotly",
+                "Tableau",
+                "Pandas",
+                "Statistical Testing",
               ],
             },
             {
               category: "Programming Languages",
               emoji: "💻",
-              skills: ["C++", "Python", "JavaScript", "TypeScript"],
+              skills: ["Python", "C++", "JavaScript", "TypeScript", "SQL"],
             },
             {
-              category: "Frontend & UI",
+              category: "Full Stack & UI",
               emoji: "🎨",
               skills: [
                 "React",
+                "Vite",
                 "Tailwind CSS",
-                "HTML5",
-                "CSS3",
                 "Framer Motion",
+                "Node.js",
+                "Express",
+                "MongoDB",
+                "PostgreSQL",
+                "PostGIS",
+                "Leaflet",
               ],
             },
             {
-              category: "Backend & Databases",
-              emoji: "🛠️",
-              skills: ["Node.js", "Express", "MongoDB", "REST API", "SQL"],
-            },
-            {
-              category: "Geospatial & GNSS",
+              category: "Geospatial & Remote Sensing",
               emoji: "🌍",
               skills: [
                 "GIS",
-                "Remote Sensing",
+                "InSAR",
                 "GNSS",
+                "Remote Sensing",
                 "Google Earth Engine",
                 "QGIS",
+                "SAR",
+                "Mogi Source Modelling",
               ],
             },
             {
               category: "Tools & DevOps",
               emoji: "⚙️",
-              skills: ["Git", "Linux", "AWS", "VS Code"],
+              skills: ["Git", "GitHub Actions", "Docker", "Linux", "AWS", "Render", "Vercel", "Pytest"],
             },
           ].map((group, gi) => (
             <motion.div
@@ -754,37 +790,37 @@ export default function App() {
 
         {/* Project Data */}
         {(() => {
-          // ✏️ TO UPDATE: Add or change GitHub links here
+          // ✏️ TO UPDATE: Add or change GitHub links / descriptions here
           const projects = [
             {
+              title: "DocuMind — RAG Service",
+              desc: "Production-grade document Q&A API: hybrid dense+BM25 retrieval fused via Reciprocal Rank Fusion, cross-encoder reranker, 5-metric eval harness (context precision, faithfulness, ROUGE-L), 82-test CI suite, and a two-stage Docker build baking HuggingFace weights at image build time.",
+              tech: ["FastAPI", "ChromaDB", "BM25", "HuggingFace", "Docker", "GitHub Actions", "Python"],
+              link: "https://github.com/RupakGanvir/DocuMind", // ✏️ Update if URL changes
+            },
+            {
+              title: "TerraWatch — Geospatial Anomaly Platform",
+              desc: "Full-stack geospatial anomaly detection platform: React/Leaflet frontend, FastAPI + PostgreSQL/PostGIS backend, JWT auth, and Isolation Forest ML for detecting spatial anomalies. Deployed across Vercel, Render, and Neon (free tier).",
+              tech: ["React", "Leaflet", "FastAPI", "PostGIS", "Isolation Forest", "JWT", "Vercel"],
+              link: "https://github.com/RupakGanvir", // ✏️ Replace with actual repo link
+            },
+            {
+              title: "RetailPulse — Analytics Pipeline",
+              desc: "End-to-end e-commerce analytics pipeline: raw data ingestion, a documented SQL cleaning layer, DuckDB warehouse with cohort retention marts (CTEs + window functions), a pytest data-quality suite, and a Streamlit + Plotly dashboard with Welch's t-test significance testing on channel LTV.",
+              tech: ["DuckDB", "SQL", "Streamlit", "Plotly", "Pytest", "Python"],
+              link: "https://github.com/RupakGanvir/retail-analytics-pipeline",
+            },
+            {
               title: "Fraud Detection System",
-              desc: "Built a fraud detection pipeline on the IEEE-CIS dataset (590K+ transactions), implementing Logistic Regression from scratch in NumPy and improving AUC-ROC from 0.784 to 0.904 using XGBoost.",
-              tech: ["Python", "XGBoost", "SMOTE", "Scikit-learn"],
-              link: "https://github.com/RupakGanvir/fraud-detection-system",
+              desc: "ML pipeline on the IEEE-CIS dataset (590K+ transactions). Implemented Logistic Regression from scratch in NumPy, applied SMOTE for class imbalance, and pushed AUC-ROC from 0.784 to 0.904 with XGBoost. Includes a FastAPI serving layer and a Folium geospatial fraud heatmap.",
+              tech: ["Python", "XGBoost", "SMOTE", "FastAPI", "Folium", "Scikit-learn"],
+              link: "https://github.com/RupakGanvir/fraud-detection-system", // ✏️ Update if URL changes
             },
             {
-              title: "Monte Carlo T20 Simulation",
-              desc: "Monte Carlo simulation to estimate T20 cricket run chase probabilities — built while studying probability distributions at IIT Kanpur.",
-              tech: ["Python", "Jupyter Notebook"],
-              link: "https://github.com/RupakGanvir/monte-carlo-t20-simulation",
-            },
-            {
-              title: "Portfolio Website (This One!)",
-              desc: "Built a fully responsive personal portfolio using React, Tailwind, and Framer Motion.",
-              tech: ["React", "Tailwind", "Framer Motion"],
-              link: "https://github.com/RupakGanvir",
-            },
-            {
-              title: "Human Counting System",
-              desc: "Human detection and counting system using OpenCV supporting image, video, and real-time webcam input with improved accuracy using Non-Max Suppression.",
-              tech: ["Jupyter Notebook", "OpenCV"],
-              link: "https://github.com/RupakGanvir/Humans-Counting",
-            },
-            {
-              title: "Task Manager Dashboard",
-              desc: "A full-stack task tracker with authentication and analytics.",
-              tech: ["Node.js", "MongoDB", "Express"],
-              link: "https://github.com/RupakGanvir",
+              title: "Intraday Trading System",
+              desc: "Autonomous intraday trading system built from scratch — ensemble of XGBoost, LSTM, CNN, and FinBERT sentiment. Live data via Zerodha Kite and Binance WebSocket feeds, paper trading mode, and a React dashboard for monitoring signals in real time.",
+              tech: ["Python", "XGBoost", "LSTM", "CNN", "FinBERT", "React", "Zerodha Kite API"],
+              link: "https://github.com/RupakGanvir", // ✏️ Replace with actual repo link
             },
           ];
 
