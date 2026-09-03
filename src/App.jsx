@@ -276,7 +276,7 @@ export default function App() {
           }`}
         >
           {
-            "M.Tech. Geoinformatics student at IIT Kanpur with a background in software engineering. I build end-to-end ML systems, geospatial pipelines, and full-stack data products — bridging the gap between research and production."
+            "M.Tech. Geoinformatics student at IIT Kanpur with a background in software engineering. I build end-to-end ML systems, geospatial pipelines, and full-stack data products, bridging the gap between research and production."
           }
         </motion.p>
 
@@ -325,7 +325,7 @@ export default function App() {
           className={`leading-relaxed mb-10 max-w-2xl ${dark ? "text-gray-400" : "text-gray-600"}`}
         >
           {
-            "I'm a software engineer turned ML practitioner — currently pursuing M.Tech. in Geoinformatics at IIT Kanpur under Prof. Onkar Dikshit. I started my career building production web applications at ASP OL Media and DevKalp Technologies, and now I channel that same builder's instinct into ML systems, data pipelines, and geospatial AI. I care about work that sits at the intersection of rigorous engineering and meaningful insight — whether that's a production-grade RAG service, a geodetic adjustment tool, or a model that says something real about the world."
+            "I'm a software engineer turned ML practitioner, currently pursuing M.Tech. in Geoinformatics at IIT Kanpur under Prof. Onkar Dikshit. I started my career building production web applications at ASP OL Media and DevKalp Technologies, and now I channel that same builder's instinct into ML systems, data pipelines, and geospatial AI. I care about work that sits at the intersection of rigorous engineering and meaningful insight — whether that's a production-grade RAG service, a geodetic adjustment tool, or a model that says something real about the world."
           }
         </p>
 
@@ -407,7 +407,7 @@ export default function App() {
             className={`text-sm leading-relaxed ${dark ? "text-gray-300" : "text-gray-600"}`}
           >
             {
-              "M.Tech. Geoinformatics @ IIT Kanpur (Civil Engg. Dept.) · Thesis under Prof. Onkar Dikshit · Building ML, geospatial & data products · Open to internships & research collaborations"
+              "M.Tech. Geoinformatics @ IIT Kanpur  · Thesis under Prof. Onkar Dikshit · Building ML, geospatial & data products · Open to internships & research collaborations"
             }
           </p>
         </motion.div>
@@ -833,7 +833,7 @@ export default function App() {
                 "JWT",
                 "Vercel",
               ],
-              link: "https://github.com/RupakGanvir", // ✏️ Replace with actual repo link
+              link: "https://github.com/RupakGanvir/terrawatch", // ✏️ Replace with actual repo link
             },
             {
               title: "RetailPulse — Analytics Pipeline",
@@ -879,7 +879,7 @@ export default function App() {
                 "React",
                 "Zerodha Kite API",
               ],
-              link: "https://github.com/RupakGanvir", // ✏️ Replace with actual repo link
+              link: "https://github.com/RupakGanvir/ai-trading", // ✏️ Replace with actual repo link
             },
             {
               title: "InSAR Anomaly Detection — Joshimath",
@@ -898,7 +898,7 @@ export default function App() {
               title: "Monte Carlo T20 Simulation",
               desc: "Monte Carlo simulation to estimate T20 cricket run chase probabilities across match scenarios. Built while studying probability distributions at IIT Kanpur — grounded in real statistical theory.",
               tech: ["Python", "NumPy", "Matplotlib", "Jupyter Notebook"],
-              link: "https://github.com/RupakGanvir/monte-carlo-t20-simulation",
+              link: "https://github.com/RupakGanvir/Monte-Carlo-t20-v2",
             },
             {
               title: "Human Counting System",
